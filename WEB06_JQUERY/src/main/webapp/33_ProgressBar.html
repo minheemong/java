@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33_ProgressBar.html</title>
+    <style type="text/css">
+        .article_pro{ width:800px;}
+        .article_pro>dl>*{line-height:40px; font-size:18px; font-weight:bold;}
+        .article_pro>dl>dt{ float: left;}
+        .article_pro>dl>dd{ float: right;}
+
+        .article_pro>ul{ list-style: none; padding: 0; margin-top:20px; background:#333333; border-radius: 10px; overflow: hidden;}
+
+        .article_pro>ul>li{ height: 20px; background:#ff0000;  width: 0; border: 4px solid #333333;border-radius: 10px;}
+    </style>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.article_pro').click(function(){
+                // 클릭된 선택자에서 span태그 검색하여  text  추출
+                var num = $(this).find('span').text();
+                // 클릭된 선택자에서 li태그 검색하여  animate 적용
+                $(this).find('li').animate({ width:num + '%'}, 2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>CSS 의 분야별 사용 빈도 및 중요성</h2>
+    <section id="section_pro">
+        <article class="article_pro">
+            <dl>
+                <dt>Selector 의 중요도</dt>
+                <dd><span>75</span>%</dd>
+            </dl>
+            <br>
+            <ul>
+                <li></li>
+            </ul>
+        </article>
+        <article class="article_pro">
+            <dl>
+                <dt>Property 의 사용빈도</dt>
+                <dd><span>25</span>%</dd>
+            </dl><br>
+            <ul>
+                <li></li>
+            </ul>
+        </article>
+        <article class="article_pro">
+            <dl>
+                <dt>CSS 애니메이션의 구사능력</dt>
+                <dd><span>33</span>%</dd>
+            </dl><br>
+            <ul>
+                <li></li>
+            </ul>
+        </article>
+        <article class="article_pro">
+                    <dl>
+                        <dt>화면 분할의 적절성</dt>
+                        <dd><span>95</span>%</dd>
+                    </dl><br>
+                    <ul>
+                        <li></li>
+                    </ul>
+        </article>
+    </section>
+</body>
+</html>

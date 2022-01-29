@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_ImageControl04.html</title>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+    // 1~10 다시 1~10 1초에 한 번씩 변경
+        $(function(){
+            var num=2;
+            setInterval(function(){
+                $('img').attr('src','images/'+num+'.jpg')
+                num++;
+                if(num==11)num=1;
+            },1000);
+        });
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg">
+</body>
+</html>

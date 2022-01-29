@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21_ImageControl05.html</title>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+    // 1초에 한 번씩 이미지 변경 1~10
+    // 이미지에 마우스가 올라가면 변경이 멈추고, 마우스가 빠지면 다시 변경
+    $(function(){
+        var num=2;
+        var timer;
+        $('img').hover(
+            function(){window.clearInterval(timer)},
+            function(){
+                timer = window.setInterval(function(){
+                $('img').attr('src','images/'+num+'.jpg')
+                num++;
+                if(num==11)num=1;
+            },1000);}
+        );
+        $('img').trigger('mouseleave'); 
+    });
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg">
+</body>
+</html>

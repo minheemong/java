@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_TabMenu.html</title>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        /* $(function(){
+            $('.small:eq(0)').css('background','orange').click(function(){
+                $('.big').fadeOut();
+                $('.big:eq(0)').css('background','orange').fadeIn();
+            });
+            $('.small:eq(1)').css('background','skyblue').click(function(){
+                $('.big').fadeOut();
+                $('.big:eq(1)').css('background','skyblue').fadeIn();
+            });
+            $('.small:eq(2)').css('background','blue').click(function(){
+                $('.big').fadeOut();
+                $('.big:eq(2)').css('background','blue').fadeIn();
+            });
+            $('.small:eq(3)').css('background','green').click(function(){
+                $('.big').fadeOut();
+                $('.big:eq(3)').css('background','green').fadeIn();
+            });
+            $('.small:eq(4)').css('background','gray').click(function(){
+                $('.big').fadeOut();
+                $('.big:eq(4)').css('background','gray').fadeIn();
+            });
+            $('.small:eq(5)').css('background','red').click(function(){
+                $('.big').fadeOut();
+                $('.big:eq(5)').css('background','red').fadeIn();
+            });
+        }); */
+        $(function(){
+            $('li:eq(0)').css('background-color','red');
+            $('li:eq(1)').css('background-color','orange');
+            $('li:eq(2)').css('background-color','yellow');
+            $('li:eq(3)').css('background-color','green');
+            $('li:eq(4)').css('background-color','blue');
+            $('li:eq(5)').css('background-color','violet');
+
+            $('li').click(function(){
+                var num = $(this).index() +1 ;
+                //for(var i=1;i<=6;i++) $('#content'+ i).hide();
+                $('.contents').hide();
+                $('#content' + num).show();
+            });
+        });
+    </script>
+    <style type="text/css">
+    #tabs{position:relative; margin:100px auto; width: 1080px; height: 40px; text-align:center; margin-bottom: 0;}
+    ul{list-style: none; padding: 0; margin:0; display: inline-block;}
+    ul li{width:180px; height:40px; float: left; border-radius: 5px 5px 0 0; line-height: 40px; text-align: center; font-size: 120%; cursor:default;}
+    /* ul li:nth-child(1){background-color: red;} */
+    #content{position: relative; margin:0 auto; width:1080px; height: 440px;}
+    .contents{position: absolute; width: 1080px; height: 440px; left:0; top:0px; line-height: 440px; text-align: center; font-size:120%;}
+    #content1{background-color: red;}
+    #content2{background-color: orange;}
+    #content3{background-color: yellow;}
+    #content4{background-color: green;}
+    #content5{background-color: blue;}
+    #content6{background-color: violet;}
+
+    /* body{margin:0;}
+    #view{width: 600px; height: 30px; margin-top: 100px; margin-left:100px;}
+    .small{width: 100px; height: 30px; background: blue; position:relative;  float:left; line-height: 30px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10% ; margin:0;}
+    .big{width: 600px; height: 400px; background: orange; position: absolute; left:100px; top:130px; line-height: 400px; text-align: center;} */
+    </style>
+</head>
+<body>
+    <!-- <div id="view">
+        <div class="small">Menu A</div>
+        <div class="small">Menu B</div>
+        <div class="small">Menu C</div>
+        <div class="small">Menu D</div>
+        <div class="small">Menu E</div>
+        <div class="small">Menu F</div>
+    </div>
+    <div class="big">Content A</div>
+    <div class="big">Content B</div>
+    <div class="big">Content C</div>
+    <div class="big">Content D</div>
+    <div class="big">Content E</div>
+    <div class="big">Content F</div> -->
+
+    <div id="tabs">
+        <ul>
+            <li>Menu A</li>
+            <li>Menu B</li>
+            <li>Menu C</li>
+            <li>Menu D</li>
+            <li>Menu E</li>
+            <li>Menu F</li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="contents" id="content1">Content A</div>
+        <div class="contents" id="content2">Content B</div>
+        <div class="contents" id="content3">Content C</div>
+        <div class="contents" id="content4">Content D</div>
+        <div class="contents" id="content5">Content E</div>
+        <div class="contents" id="content6">Content F</div>
+    </div>
+</body>
+</html>

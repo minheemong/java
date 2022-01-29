@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31_UserDefineObject.html</title>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        // 윈도우에서 제공하는 객체 : window  screen  documnet 등등
+        // 사용자 정의 객체(object)
+        // 그동안 사용했던 객체는   {  } 안에 있으면서, 키:밸류  로 조합된 항모이  (,) 구분되어 여러개 있는거.. 그걸 객체라고 불러왔습니다.    키:밸류  요걸 멤버 변수와 값 이라고도 합니다
+
+        // 사용자 정의 객체 생성   -  키:요소
+        // 그간 이름없이 전달인수로만 사용되던 객체 ({ }) 를 이제 변수에 저장해서 사용합니다.
+        /*
+        var product = {
+            name : '냉장고',
+            제조사 : '대한민국'
+        };
+        $(function(){
+            $('body').append('<h1>' +  product.name + '</h1>' );
+            $('body').append('<h1>' +  product.제조사 + '</h1>' );
+            $('body').append('<h1>' +  product['name'] + '</h1>' );
+            $('body').append('<h1>' +  product['제조사'] + '</h1>' );
+        });
+        */
+        // 자바스크립트의 사용자 정의 객체는 클래스를 따로 만들지 않고, 위와 같이 직접 값을 대입하며, 객체를 생성합니다. 이때 기술하는 변수가 멤버필드가 되고, 이때 정의하는 함수가 멤버메서드가 됩니다. 이들은 변수에 저장될수도 있고, 전달인수자체로 사용될 수 있습니다.
+        // 멤버 필드에 기본적으로 public 이나, private 옵션이 없기 때문에, 객체이름과 필드명을 (.)으로 이어서 값을 직접 얻어낼수 있습니다.
+        // 객체변수명['필드명'] 과 같은 표현도 가능합니다.
+
+
+
+
+        //2. 객체의 속성과 메서드  
+        // - 속성:객체 내부에 있는 하나하나의 값.
+        // - 객체의 속성이 가질 수 있는 자료형.
+        /*
+        var object = {
+            useNumber:273,
+            useString:'문자열',
+            useBoolean:true,
+            useArray:[52, 385, 103, 58] ,
+
+            // 메서드:객체의 속성 중 함수자료형인 속성. 
+            method:function(){
+                document.write('object 객체의 userNumber : ' + this.useNumber , "<br/>");
+                document.write('object 객체의 useString : ' + this.useString , "<br/>");
+            }  // method :사용할 함수이름 , function(){}:익명함수
+        };
+        object.method();
+        
+        // 멤버메서드도 함수이기때문에 전달인수->매게변수 를 사용할 수 있습니다
+        var person = {
+            name:'홍길동',
+            eat:function(food){ 
+                document.write('음식: ' + food, "<br/>");
+            }
+        };
+        document.write(person.name, "<br/>");
+        person.eat('스파게티');
+
+        // - this 키워드 : 자바스크립트의 맴버함수에서 멤버변수에 접근할때는 this 키워드를 생략할 수 없습니다.
+        var person = {
+            name:'홍길동',
+            eat:function(food){
+                document.write(this.name+'이/가 '+food+'을/를 먹었습니다.');
+            }
+        };
+        person.eat('김밥');
+        */
+
+
+
+
+        //3. 객체와 반복문 
+        /*
+        var product = {
+            name:'Eclipse & Tomcat',
+            price:'Free',
+            language: '한국어',
+            supportOS:'win32/64',
+            subscripton:true
+        };
+        var output = '';
+        for(var k in product){  // 객체내의 멤버필드들이  k변수에 전달-반복실행
+            // 객체명[필드명] 으로 필드값을 얻어냅니다
+            output += '※ ' + k + ' : ' + product[k] + '<br/>'; 
+        }
+        document.write(output);
+        // for(var k in 배열또는 객체) 반복문의 반복하는 요소로, 배열이 지정되면 인덱스들이 k에 차례로 할당되며 반복실행을 진행하고, 객체가 지정되면 멤버변수의 이름들이 k에 차례로 할당되며 반복을 진행합니다.
+        */
+
+
+
+
+
+        /* 4. 객체와 관련된 키워드  
+        var student = {
+            이름:'홍길동',
+            국어:92, 
+            수학:98, 
+            영어:96, 
+            과학:98
+        };
+        // - in 키워드: 해당 키(멤버변수)가 객체 안에 있는지 확인
+        var output = '';
+        output += "'이름' in student: "+ ('이름' in student)+'<br/>';
+        output += "'국어' in student: "+ ('국어' in student)+'<br/>';
+        output += "'수학' in student: "+ ('수학' in student)+'<br/>';
+        output += "'영어' in student: "+ ('영어' in student)+'<br/>';
+        output += "'과학' in student: "+ ('과학' in student)+'<br/>';
+        output += "'성별' in student: "+ ('성별' in student); 
+        document.write(output);
+
+
+        
+        // - with 키워드: 	복잡하게 사용해야 하는 코드를 짧게 줄여 주는 키워드.	
+        var student = {	이름:'홍길동', 국어:92,	수학:98,	영어:96,	과학:98 };
+        //    . with 키워드를 사용하지 않은 경우
+        var write = '';
+        write += '이름 : ' + student.이름+'<br/>';
+        write += '국어 : ' + student.국어+'<br/>';
+        write += '수학 : ' + student.수학+'<br/>';
+        write += '영어 : ' + student.영어+'<br/>';
+        write += '과학 : ' + student.과학+'<br/>';
+        document.write(write);
+        //  . with 키워드를 사용한 경우	
+        write = '';
+        with(student){
+            write += '이름 : ' + 이름+'<br/>';
+            write += '국어 : ' + 국어+'<br/>';
+            write += '수학 : ' + 수학+'<br/>';
+            write += '영어 : ' + 영어+'<br/>';
+            write += '과학 : ' + 과학+'<br/>';
+        }
+        document.write(write); 
+        */
+
+
+
+        /*
+        //5. 객체의 속성 추가와 제거 
+        // - 동적 속성 추가/제거 : 처음 객체생성시점이후에 객체의 속성을 추가/제거하는 것.
+        var student = {}; // 빈 객체를 생성
+
+        student.이름 = '홍길동';  // 동적으로 속성 추가
+        student.취미 = '악기';   // 동적으로 속성 추가
+        student.특기 = '프로그래밍';  // 동적으로 속성 추가
+        student.장래희망 = '훌륭한 프로그래머'; 	// 동적으로 속성 추가
+
+        student.toString = function(){  // 동적으로 메서드 추가
+            var output = '';
+            for(var key in this)  // 현재 객체의 모든 멤버들을 대상으로 반복 실행
+                if(key != 'toString')  // 자기 자신 toString 제외하고 나머지 실행
+                    output += key + ' : '+this[key]+'<br/>';		
+            return output;
+        }; 	
+
+        document.write(student.toString()); // document.write(student);
+        delete(student.장래희망); // 객체의 속성 제거
+        document.write(student);
+        */
+
+
+
+        /* 6. 생성자 함수 */
+        // - new 키워드를 사용해 객체를 생성할 수 있는 함수입니다. 생성자 함수를 사용한 객체의 생성이 가능합니다.(Date 객체 사용처럼)
+        // - 일반 함수를 만들되, 내부 변수 및 매서드에 this 를 붙여서 생성합니다
+        function Student(name, korean, math, english, science){
+            this.name = name;
+            this.kor = korean;
+            this.math = math;
+            this.english = english;
+            this.science = science;
+            this.getSum = function(){ 
+                return this.kor+this.math+this.english+this.science;
+            }
+            this.getAvg = function(){  		return this.getSum() / 4;	}
+            this.toString = function(){
+                return this.name+' : '+this.getSum()+' , '+this.getAvg();
+            }
+        }   
+        var std1 = new Student('홍길동', 85,98,74,56);
+        document.write(std1 + '<br/>');
+
+        
+        var stds = [];
+        stds.push(std1);
+        // 생성자를 이용해서 배열에 객체를 넣는 예
+        stds.push( new Student('홍길서', 75, 80, 65, 90) );
+        stds.push( new Student('홍길남', 80, 95, 75, 80) );
+        stds.push( new Student('홍길북', 85, 60, 85, 70) );
+        stds.push( new Student('김길동', 65, 60, 75, 80) );
+        stds.push( new Student('이길동', 75, 95, 85, 90) );
+        stds.push( new Student('박길동', 90, 80, 75, 90) );
+
+        var output = '&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;총점&nbsp;&nbsp;&nbsp;평균<br/>';
+        for(var i in stds) 
+            output += stds[i].toString()+'<br/>';
+        document.write(output);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

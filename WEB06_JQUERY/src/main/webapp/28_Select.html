@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28_Select.html</title>
+    <link href="css/28.css" rel="stylesheet">
+    <script src="script/jquery-3.6.0.js"></script>
+    <script src="script/28.js">
+    // substring과 trim 함수 이용
+
+    // select 메뉴를 클릭하면 dropmenu가 펼쳐집니다
+    // 각 선택항목에 마우스가 올라가면 배경이 변경됩니다
+    // 하나의 항목을 선택하면 메뉴는 없어지고 국번호만 화면에 보이게 합니다
+
+    /* $(function(){
+        $('#arrow').click(function(){
+            $('#dropmenu').slideDown();
+            $('#dropmenu div').click(function(){
+                var select=$(this).index();
+                $('#title').removeData('#title');
+                $('#title').append('#dropmenu div:eq('+select+')');
+                $('#dropmenu').slideUp();
+            });
+        });
+    }); -실패!*/
+
+</script>
+</head>
+<body>
+    <div id="base">
+        <div id="title">
+            <div id="num">+82</div>
+            <div id="arrow"></div>
+        </div>
+    </div>
+    <div id="dropmenu">
+        <div>+1 &nbsp;&nbsp;&nbsp; Canada</div>
+        <div>+1 &nbsp;&nbsp;&nbsp; United States</div>
+        <div>+63 &nbsp;&nbsp;&nbsp; Philippines</div>
+        <div>+62 &nbsp;&nbsp;&nbsp; Indonesia</div>
+        <div>+84 &nbsp;&nbsp;&nbsp; Vietnam</div>
+        <div>+55 &nbsp;&nbsp;&nbsp; Brazil</div>
+        <div>+86 &nbsp;&nbsp;&nbsp; China</div>
+        <div>+85 &nbsp;&nbsp;&nbsp; HongKong</div>
+        <div>+82 &nbsp;&nbsp;&nbsp; Korea</div>
+    </div>
+</body>
+</html>

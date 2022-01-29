@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_ImageControl03.html</title>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+    // 마우스로 이미지를 클릭할때마다 파일이 바뀌도록 코딩
+    // 10다음 1
+    $(function(){
+       /*  var num = 1;
+        $('img').click(function(){
+            num++;
+            $('img').attr('src','images/'+num+'.jpg');
+            if(num==10)num=0;
+        }); */
+        var num = 2;
+        $('img').click(function(){
+            $('img').attr('src','images/'+num+'.jpg');
+            num++;
+            if(num==11)num=1;
+        });
+    });
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg">
+</body>
+</html>

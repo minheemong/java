@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    #base{position: relative; width: 170px; height: 225px; border:1px solid blue; left:50px; overflow: hidden;}
+    #view{position:absolute; width: 1700px; height: 225px; left:0; top:0; border:1px dashed red; transition: 1s;}
+    </style>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+    // 1초에 그림 한 장씩 왼쪽으로 롤링합니다. 10번째에 다다르면 다시 첫번째로 이동합니다
+    // 마우스가 올라가면 롤링 멈춤, 마우스가 빠지면 다시 시작
+    $(function(){
+        var n=0;
+        var timer;
+        $('#base').hover(
+            function(){clearInterval(timer)},
+            function(){
+                timer=setInterval(function(){
+            $('#view').animate({left:(-170*n)},0);
+            n++;
+            if(n==10)n=0;
+        },1000);
+        });
+        $('#base').trigger('mouseleave');
+    });
+    </script>
+</head>
+<body>
+    <div id="base">
+        <div id="view">
+            <img src="images/1.jpg"><img src="images/2.jpg"><img src="images/3.jpg"><img src="images/4.jpg"><img src="images/5.jpg"><img src="images/6.jpg"><img src="images/7.jpg"><img src="images/8.jpg"><img src="images/9.jpg"><img src="images/10.jpg">
+        </div>
+    </div>
+</body>
+</html>

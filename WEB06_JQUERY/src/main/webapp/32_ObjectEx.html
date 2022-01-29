@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32_ObjectEx.html</title>
+    <link href="css/news.css" rel="stylesheet" />
+
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        // 배열을 만들고 16개의 기사를  사진경로, 기사제목, 언론사  세개를 하나의 객체로 만들며(생성자를 이용하시면 좋습니다.), 그를 배열에 넣습니다.
+        // 배열의 값을 반복 실행을 이용해서  태그와 함께 들어갈 내용을 만들고, 이를 view 에  appned  로 넣어 주세요.
+        // 좌우 버튼을 만들어 8개의 기사가 옮겨지며 화면 나타나도록 작성해주세요
+        // 다음 로고 라인과  메뉴라인은 작성하지 않아도 됩니다.
+        // 이미지 크기 : 264 x 148
+
+        $(function(){
+
+            function news(image, title, newscop){
+                this.image = image,
+                this.title =  title,
+                this.newscop = newscop
+            }   
+            var newsarray = [];
+            newsarray.push( new news( 'newsimg/1.png', '김재욱X정수정 \'크레이지러브\', KBS2 월화라인업..2022년 2월...', '스포티비뉴스') );
+            newsarray.push( new news( 'newsimg/2.png', '\'컬투쇼\'김태균 "홍석천, 지상렬x왁스 연결해 주려 했었다"', '티브이 데일리') );
+            newsarray.push( new news( 'newsimg/3.png', '전지현, 남편과 송도서 다정한 \'부부 데이트\'..\'이혼설\'날렸다', '스포티비뉴스') );
+            newsarray.push( new news( 'newsimg/4.png', '\'컬투쇼\'이기찬 "신곡\'원룸\' 작사 전소민, 지석진이 부를뻔"', '스포츠투데이') );
+            newsarray.push( new news( 'newsimg/5.png', '박명수, 동갑내기 김구라 2세 소식에 "축하 축하"', '스타투데이') );
+            newsarray.push( new news( 'newsimg/6.png', '홍자, 스타랭킹 9월 3주차 3위.. 식지않는 뜨거운 인기', '스타뉴스') );
+            newsarray.push( new news( 'newsimg/7.png', '\'한창 궁금한거 많은 나이\' 쩌리짱이 HOT 한 소식 대신 물어봐...', '놀면 뭐하니?') );
+            newsarray.push( new news( 'newsimg/8.png', '광야로 걸어간 재재에게 냅다 사랑 고백하는 NCT', '스브스뉴스') );
+            newsarray.push( new news( 'newsimg/9.png', '\'박서준\'픽한 \'마블 영화\'감독의 어마무시한 정체', '맥스무비') );
+            newsarray.push( new news( 'newsimg/10.png', '\'정희\' 요아리 "과거 무대공포증, 대인기피증 앓아, \'싱어게인 출연..', '스포츠투데이') );
+            newsarray.push( new news( 'newsimg/11.png', '\'정희\' 홍주현 "미스트롯2 홍지윤과 자매.. 엄마 노래실력 닮아', '스타투데이') );
+            newsarray.push( new news( 'newsimg/12.png', '\'정희\' 요아리 "2007년 만든 이름, 당시에 촌스럽다는 말 자주 들어"', '타브이데일리') );
+            newsarray.push( new news( 'newsimg/13.png', '\'컬투쇼\' 지상렬, 절친 김구라 2세소기에 "축하할 일"', '뉴스1') );
+            newsarray.push( new news( 'newsimg/14.png', '국민NC 에서 대변인으로 변신한 김연주_마이웨이 256회 예...', '스타다큐 마이웨이') );
+            newsarray.push( new news( 'newsimg/15.png', '\'정희\' 요아리 "\'싱어게인\'으로 무대 공포증 극복"', '스타투데이') );
+            newsarray.push( new news( 'newsimg/16.png', '\'정희\'김신영"NC양치, 디바, 오늘, 막방..\'두데\'로 옮긴다', '티브이 데일리') );
+
+
+            var tag = '<div id="news">';
+        
+            for( var i = 0; i<=14; i+=2 ){
+                tag += '<div class="news_one">';
+                
+                tag += '<img src = "' + newsarray[i].image + '"/>';
+                tag += '<div class="title">'  + newsarray[i].title +  '</div>';
+                tag += '<div class="co">'  + newsarray[i].newscop +  '</div>';
+
+                tag += '<img src = "' + newsarray[i+1].image + '"/>';
+                tag += '<div class="title">'  + newsarray[i+1].title +  '</div>';
+                tag += '<div class="co">'  + newsarray[i+1].newscop +  '</div>';
+                
+                tag += '</div>';
+            }
+            tag += '</div>';
+
+            //alert(tag);
+            $('#view').append(tag);
+
+            var num = 0;
+            $('#lbtn').click(function(){
+                if( num == 0 )return;
+                num--;
+                $('#news').animate({left:0}, 500);
+            });
+
+            $('#rbtn').click(function(){
+                if( num == -1 )return;
+                num++;
+                $('#news').animate({left:-1100}, 500);
+            });
+        });
+
+        
+
+    </script>
+</head>
+<body>
+    <div id="base">
+        <div id="lbtn"></div>
+        <div id="view">
+            
+        </div>
+        <div id="rbtn"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_ImageControl01.html</title>
+    <style type="text/css">
+    div{position:absolute; top:0; left:0; margin:10px;}
+    </style>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        // $(function(){
+        //     $('#fir').show();
+        //     $('#sec').hide();
+        //     $('div:eq(0)').mouseenter(function(){
+        //         $('#fir').hide();
+        //         $('#sec').show();
+        //     });
+        // });
+
+        $(function(){
+            $('img:first').hover(
+                function(){ $(this).attr('src','images/2.jpg')},
+                function(){ $('img:first').attr('src','images/1.jpg')}
+            );
+            $('img:last').hover(
+                function(){ $(this).attr('src','images/3.jpg')},
+                function(){ $('img:last').attr('src','images/2.jpg')}
+            );
+        });
+    </script>
+</head>
+<body>
+   <!--  <div><img src="images/1.jpg" id="fir"><img src="images/2.jpg" id="sec"></div>
+    <div><img src="images/3.jpg" id="thi"><img src="images/4.jpg" id="for"></div> -->
+
+    <img src="images/1.jpg">
+    <img src="images/2.jpg">
+</body>
+</html>

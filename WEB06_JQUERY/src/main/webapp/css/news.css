@@ -1,0 +1,11 @@
+#base{ position:relative; width:1230px; height:545px; margin:0 auto; border:1px solid black;}
+#view{ position:relative; width:1100px; height:545px; margin:0 auto; border:1px solid red; overflow: hidden; }
+#news{ position:absolute; width:2200px; height:545px;   }
+#lbtn{ position:absolute; width:50px; height:50px;  border:1px solid blue; border-radius: 50%; left:0; top:248px; background: greenyellow;}
+#rbtn{ position:absolute; width:50px; height:50px;  border:1px solid blue; border-radius: 50%; right:0; top:248px; background: greenyellow;}
+.news_one{ position:relative; width:264px; height:545px; margin-right:14px; float:left; background: white;  }
+.news_one:nth-child(4){ margin-right:0px; }
+.news_one:last-child{ margin-right:0px; }
+
+.title{ position: relative; width:262px; height:68px; border:1px dotted green; font-size:110%; font-weight:bold; padding-top:10px; line-height: 1.6em;}
+.co{ position: relative; width:262px; height:40px; border:1px dotted green;}

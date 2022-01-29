@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_EffectEx02.html</title>
+    <style type="text/css">
+        div {width: 80px;  height: 80px;  margin: 3px;  float: left;}
+        #red { background: #ff0000; }
+        #green { background: #00ff00; }
+        #blue { background: #0000ff; }
+    </style>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        //$('#red').click(function(){ $(this).fadeOut(1000); });
+        //$('#green').click(function(){ $(this).fadeOut(1000); });
+        //$('#blue').click(function(){ $(this).fadeOut(1000); });
+        //$('div').click(function(){ $(this).fadeOut(1000); });
+        $('#red').click(function(){ $(this).fadeTo(1000, 0.1); });
+        $('#green').click(function(){ $(this).fadeTo(1000, 0.1); });
+        $('#blue').click(function(){ $(this).fadeTo(1000, 0.1); });
+
+        $('button').click(function(){
+            //$('#red').fadeIn(1000);
+            //$('#green').fadeIn(1000);
+            //$('#blue').fadeIn(1000);
+            $('#red').fadeTo(1000, 1.0);
+            $('#green').fadeTo(1000, 1.0);
+            $('#blue').fadeTo(1000, 1.0);
+        });
+    });
+    </script>
+</head>
+<body>
+    <button>원래데로</button><br />
+    <div id="red"></div> 
+    <div id="green"></div> 
+    <div id="blue"></div> 
+</body>
+</html>

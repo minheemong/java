@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24_ImageControll08.html</title>
+    <style>
+        #base{position: relative; width:600px; height:400px; margin: 0 auto; border:1px dashed black;  overflow:hidden;}
+        #view{ position: absolute; width:4800px; height:400px; left:0; top:0; border:1px dashed red; }
+
+        #remot{ position: relative; width:200px; height:50px; border:1px dashed white; margin:0 auto; top:350px; text-align: center;}
+        ul{ list-style: none; padding:0; margin:0; display: inline-block;}
+        ul li{float: left; width:14px; height:14px; background: white; border-radius: 50%; margin:18px 4px;}
+
+        img{ width:600px; height:400px; }
+        .select{ background: #343434; border:1px solid black;}
+    </style>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('li').eq(0).addClass('select');
+
+            $('li').click( function(){
+                var num = $(this).index();
+                var dis = -600 * num;
+                $('#view').animate({left:dis}, 300);
+
+                $('li').removeClass('select');
+                $('li').eq(num).addClass('select');
+
+                //$('li').css('background','white');
+                //$('li').eq(num).css('background','black');
+                //$('li').eq(num).css('border','1px solid black');
+            } );
+        });
+        // 현재의 예제에, 리모컨 하나를 클릭하면 리모컨 버튼 색깔이 짙은 회색(색은 자유롭게 선택 가능)으로 변경되며 현재 이미지가 몇번째인지 확인 할수 있게 코드를 추가해주세요
+        // 다른 버튼을 누르면 이전 변했던 버튼 색은 다시 흰색으로 돌아갑니다
+        // css 변경 코드를 사용하셔도 되고, addClass 함수를 이용하셔도 됩니다.
+    </script>
+</head>
+<body>
+    <div id="base">
+        <div id="view"><img src="images/Koala.jpg"><img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Jellyfish.jpg"><img src="images/Lighthouse.jpg"><img src="images/Penguins.jpg"><img src="images/Tulips.jpg"></div>
+        <div id="remot">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

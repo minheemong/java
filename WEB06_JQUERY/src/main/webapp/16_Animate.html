@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_Animate.html</title>
+    <style type="text/css">
+    div{width: 50px; height:50px; margin:3px; background: orange; position: relative;}
+    </style>
+    <script src="script/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        // $(selector).animate({속성명, 값})
+        $(function(){
+            $('div').hover(
+                function(){ $(this).animate( {left:500}, 1000); },
+                function(){ $(this).animate( {left:0}, 1000); }
+            ); // 마우스가 div에 올라가면 left 값을 500으로 설정, 마우스가 빠지면 제자리
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
