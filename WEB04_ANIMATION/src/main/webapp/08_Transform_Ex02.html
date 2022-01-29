@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_Transform_Ex01.html</title>
+    <style type="text/css">
+        #base{ width:250px;	height:1000px; background:#595959;	}
+        #top{ position:relative; width:100%; height:150px; border:1px solid white;}
+        .menuall{ position:relative; width:100%; height:40px; border:1px solid yellow; background:#232323; color:white; line-height:0px; text-align:center; }
+        .submenuall{ position:relative; width:100%; height:1px; background:#989898; }
+   
+        #menu1{z-index: 10;}
+        #submenu1{z-index: 9;transform-origin:top;}
+        #menu2{z-index: 8;}
+        #submenu2{z-index: 7;transform-origin:top;}
+        #menu3{z-index: 6;}
+        #submenu3{z-index: 5;transform-origin:top;}
+        #menu4{z-index: 4;}
+        #submenu4{z-index: 3;transform-origin:top;}
+        #menu5{z-index: 2;}
+        #submenu5{z-index: 1;transform-origin:top;}
+
+        #menu1:hover{color:orange;}
+        #menu1:hover~#submenu1{ transform:scaleY(100);}
+        #menu1:hover~#menu2{ transform:translateY(100px); }
+        #menu1:hover~#menu3{ transform:translateY(100px); }
+        #menu1:hover~#menu4{ transform:translateY(100px); }
+        #menu1:hover~#menu5{ transform:translateY(100px); }
+
+        #menu2:hover{color:orange;}
+        #menu2:hover~#submenu2{ transform:scaleY(100);}
+        #menu2:hover~#menu3{ transform:translateY(100px); }
+        #menu2:hover~#menu4{ transform:translateY(100px); }
+        #menu2:hover~#menu5{ transform:translateY(100px); }
+
+        #menu3:hover{color:orange;}
+        #menu3:hover~#submenu3{ transform:scaleY(100);}
+        #menu3:hover~#menu4{ transform:translateY(100px); }
+        #menu3:hover~#menu5{ transform:translateY(100px); }
+
+        #menu4:hover{color:orange;}
+        #menu4:hover~#submenu4{ transform:scaleY(100);}
+        #menu4:hover~#menu5{ transform:translateY(100px); }
+
+        #menu5:hover{color:orange;}
+        #menu5:hover~#submenu5{ transform:scaleY(100);}
+
+  
+    </style>
+</head>
+<body>
+    <div id="base">
+        <div id="top"></div>
+        <div id="menu1" class="menuall"><h2>NEWS</h2></div>
+        <div id="submenu1"  class="submenuall"></div>
+        <div id="menu2" class="menuall"><h2>PORTPOLIO</h2></div>
+        <div id="submenu2"  class="submenuall"></div>
+        <div id="menu3" class="menuall"><h2>BOARD</h2></div>
+        <div id="submenu3"  class="submenuall"></div>
+        <div id="menu4" class="menuall"><h2>ALBUM</h2></div>
+        <div id="submenu4"  class="submenuall"></div>
+        <div id="menu5" class="menuall"><h2>CONTACT</h2></div>
+        <div id="submenu5"  class="submenuall"></div>
+    </div>
+</body>
+</html>

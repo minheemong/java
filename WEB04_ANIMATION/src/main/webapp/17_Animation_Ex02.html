@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_Animation_Ex02.html</title>
+    <style type="text/css">
+        .box{position:relative; left:100px;height:60px; width:400px; font-size:150%; line-height:60px; padding-left:50px; background: orange; 
+        animation-name:moving; 
+        animation-duration: 2s; 
+        animation-iteration-count:infinite; 
+        transform-origin:right top;
+        animation-direction:alternate;}
+
+        @keyframes moving {
+        from{ transform:perspective(1000px) rotateY(0deg);}
+        to{ transform:perspective(1000px) rotateY(180deg);}
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>CSS3 Animation</h3>
+    </div> 
+</body>
+</html>

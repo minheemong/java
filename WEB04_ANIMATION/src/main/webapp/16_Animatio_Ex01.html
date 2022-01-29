@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_Animatio_Ex01.html</title>
+    <style type="text/css">
+        body{ overflow-x: hidden;}
+        .box{ position: relative; height:60px; width:400px; padding-left: 50px; font-size:150%; line-height: 60px; animation-name: moving; animation-iteration-count: infinite; animation-duration: 6s;animation-direction:alternate;}
+        @keyframes moving{
+            from{ left:105%; background:#faef7c; opacity:0.2;}
+            to{left:-500px; background: orange; opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>CSS3 Animation</h3>
+    </div>
+</body>
+</html>

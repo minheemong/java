@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_Product03.html</title>
+    <style type="text/css">
+        .view{ position: relative; width:1200px; height:400px; margin:0 auto; border:1px dashed red; overflow: hidden; }
+        .bigimg{ position: absolute; top:0; left:0; background: silver; width:600px; height:400px; font-size:130%; font-weight:bold; color:white; line-height: 400px; text-align: center;}
+        .box1{ position: absolute; right:0px; border-radius: 50%; overflow: hidden; width:130px; height:130px; }
+        #btn_img1{ top:0px;}
+        #btn_img2{ top:135px;}
+        #btn_img3{ bottom:0px;}
+        .box2{ position:absolute; top:0px; left:-600px; transition:0.5s; opacity:0.3;}
+        #btn_img1:hover~#view_img1{transform:translateX(600px);opacity:1;}
+        #btn_img2:hover~#view_img2{transform:translateX(600px);opacity:1;}
+        #btn_img3:hover~#view_img3{transform:translateX(600px);opacity:1;}
+    </style>
+</head>
+<body>
+    <div class="view">
+        <div class="bigimg">오른쪽 작은 이미지에 마우스를 올리면 큰 이미지를 볼 수 있습니다.</div>
+        <div class="box1" id="btn_img1"><img src="images/prod1.jpg" width="130" height="130"></div>
+        <div class="box1" id="btn_img2"><img src="images/prod2.jpg" width="130" height="130"></div>
+        <div class="box1" id="btn_img3"><img src="images/prod3.jpg" width="130" height="130"></div>
+        <div class="box2" id="view_img1"><img src="images/prod1.jpg" width="600" height="400"></div>
+        <div class="box2" id="view_img2"><img src="images/prod2.jpg" width="600" height="400"></div>
+        <div class="box2" id="view_img3"><img src="images/prod3.jpg" width="600" height="400"></div>
+    </div>
+</body>
+</html>
