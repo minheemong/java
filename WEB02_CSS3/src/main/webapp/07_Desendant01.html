@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- 
+* 후손선택자 : 특정한 태그 아래에 있는 후손을 선택할 때 사용하는 선택자
+* id를 남용하지 않고 상대적 위치로 Selector를 사용합니다
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07_Desendant01 - 후손선택자</title>
+<style type="text/css">
+	#section h1{color:blue;}
+	/*빈칸(공백)으로 선택자가 이어지면, 아래에 포함되어 있는 child 선택자들 모두 지목하게 됩니다*/
+	#header h1{color:red;}
+	#header h1, #header h3 {background:yellow;} 
+	/*','로 구분하면 두개의 후손선택자를 동시 선택 가능합니다
+	#header h1, h3 -> header 내부의 h1과 h3가 아니라, header 내부의 h1과 
+		내부외부 포함 모든 h3라는 뜻입니다*/
+</style>
+</head>
+<body>
+	<div id="header">
+		<h1 class="title">회사 이름/로고</h1>
+		<div id="nav">
+		<h1>Nabigation</h1><h2>header2</h2><h3>CSS3</h3>
+		</div>
+	</div>
+	<div id="section">
+		<h1 class="title">Aside</h1>
+		<p><h1 class="title">Aside</h1>국가는 여자의 복지와 권익의 향상을 위하여 
+			노력하여야 한다. 언론·출판은 타인의 명예나 권리 또는 공중도덕이나 사회윤리를 침해하여서는 
+			아니된다. 언론·출판이 타인의 명예나 권리를 침해한 때에는 피해자는 이에 대한 피해의 배상을 
+			청구할 수 있다. 국가는 사회보장·사회복지의 증진에 노력할 의무를 진다.</p>
+		<h1 class="title">Aside</h1>
+	</div>
+</body>
+</html>

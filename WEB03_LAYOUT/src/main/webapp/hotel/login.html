@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/hotelCss.css" rel="stylesheet">
+</head>
+<body>
+<div class="logtitle">로그인</div>
+<form method="post" action="shop.do" name="loginFrm">
+	<input type="hidden" name="command" value="login">
+	
+<div class="logview">
+	<div class="logbox1">
+		<div class="loginput">
+			<input name="id" type="text" id="logidPwd" placeholder="&nbsp;&nbsp;아이디 입력">
+			<input name="pwd" type="password" id="logidPwd"  placeholder="&nbsp;&nbsp;비밀번호 입력">
+		</div>
+			<input type="submit" value="로그인" id="login" onclick="return loginCheck()">
+	</div>	
+	<div class="logbox2">
+			<input type="button" value="회원가입" class="logbutton"	
+				onclick="location.href='shop.do?command=contract'">
+			<input type="button" value="아이디 비밀번호 찾기" class="logbutton" onclick="find_id()">	
+		<!-- <div>&nbsp;&nbsp;&nbsp;${message}</div> -->
+	</div>
+</div>
+</form>
+</body>
+</html>

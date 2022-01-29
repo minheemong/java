@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>19_Animation_TestReady.html</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            /* Main Area */
+            .main_view{
+                position: relative;
+                margin: 0 auto;
+                width: 600px; height: 270px;
+                /* border: 1px solid gray; */
+            }
+            /* Header Title */
+            .title{
+                position: relative;
+                border-bottom: 2px dotted gray;
+                width: 580px; height: 50px;
+                line-height: 50px;
+                padding-left: 20px;
+            }
+            ul{
+                position: relative;
+                list-style: none;
+            }
+            /* movie list li */
+            .mline{
+                position: relative;
+                border-bottom: 2px dotted gray;
+                width: 600px; height: 30px;
+                overflow: hidden;
+            }
+            /* movie poster */
+            .poster{
+                position: absolute;
+                left: -80px; top: 0px;
+                float: left;
+            }
+            .poster img{
+                position: relative;
+                width: 80px; height: 100px;
+            }
+            /* Other than poster */
+            .text{
+                position: absolute;
+                left: 0px; top: 0px;
+                width: 580px; height: 100%;
+                padding-left: 20px;
+                float: left;
+            }
+            /* movie name and grade */
+            .top{
+                position: relative;
+                width: 580px; height: 30px;
+                line-height: 30px;
+                font-size: 90%;
+                color: blue;
+                font-weight: bold;
+            }
+            /* movie grage image */
+            .top img{
+                position: absolute;
+                right: 30px;
+            }
+            /* movie evaluation */
+            .bottom{
+                position: relative;
+                width: 580px; height: 70px;
+                font-size: 90%;
+            }
+            /* Event */
+            .mline:hover{
+                height: 120px;
+            }
+            .mline:hover .poster{
+                left: 20px; top: 10px;
+            }
+            .mline:hover .text .top,.bottom{
+                left: 90px;
+                width: 490px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main_view">
+            <div class="title"><h2>개봉영화 평점</h2></div>
+            <div class="movie_view">
+                <ul>
+                    <li class="mline">
+                        <div class="poster">
+                            <img src="images/list1.png">
+                        </div>
+                        <div class="text">
+                            <div class="top">
+                                음악앨범
+                                <img src="images/grade1.png">
+                                <hr>
+                            </div>
+                            <div class="bottom">
+                                메가박스 대전탄방 1관 제일뒤쪽 혼자보러온 안경쓴 아줌마..몇번 놀라고 그런건 상관없는데, 거의 악의적으로 크게 소리지르고 효과음내고;; 어떡해어떡해 이딴말은 크게 몆번을 하는겁니까..하 진짜 돌아버리는줄 알았네. ...
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mline">
+                        <div class="poster">
+                            <img src="images/list2.png">
+                        </div>
+                        <div class="text">
+                            <div class="top">
+                                엑시트
+                                <img src="images/grade2.png">
+                                <hr>
+                            </div>
+                            <div class="bottom">
+                                오랜만에 보는 힐링영화...최근 본 영화 중 가장 여운이 남는 것 같다. 아직도 OST가 머릿속에서 잔잔히, 어렴풋이 맴돈다. OST뿐만 아니라 스토리, 영상미, 연출 모두 좋았다. 스토리를 대략 아는 상태였음에도 ...
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="mline">
+                        <div class="poster">
+                            <img src="images/list3.png">
+                        </div>
+                        <div class="text">
+                            <div class="top">
+                                변신
+                                <img src="images/grade3.png">
+                                <hr>
+                            </div>
+                            <div class="bottom">
+                                리메이크 작품이기에 원작과 비교하지 않을순 없더군요. // 원작은 개연성과 관계성을 주요한 포인트로 잡았다고 봅니다. // 반면, 이 작품은 두 주인공의 감정선에만 집중합니다. 그러다보니 뜬금없는 장면들로 맥이 끊...
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="mline">
+                        <div class="poster">
+                            <img src="images/list4.png">
+                        </div>
+                        <div class="text">
+                            <div class="top">
+                                분노의 질주
+                                <img src="images/grade4.png">
+                                <hr>
+                            </div>
+                            <div class="bottom">
+                                여름엔 역시 이런 스케일 영화 봐줘야함 진짜 오랜만에 스케일 큰 영화 봤다 올 한국영화중 단연컨데 1위인 듯
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

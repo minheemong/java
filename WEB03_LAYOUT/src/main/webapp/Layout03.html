@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Layout03</title>
+<style type="text/css">
+	body{ margin:0px;}
+	#base{ position:relative; width:100%; height:500px; background:#EEEEEE; 
+				border:1px solid black; top:100px;}
+	.box12{ position:absolute; height:400px; width:290px; top:50px; border:1px solid gray;
+				box-shadow:-3px 3px 3px 3px gray; }
+	#box1{ background:orange; right:1130px;}
+	#box2{  background:#FFFF22; right:820px;}
+	#box3{ position:absolute; background:#FFFFAA; height:400px; top:50px; width:50%;
+				left:50%; border:1px solid black; box-shadow:-3px 3px 3px 3px gray;}
+</style>
+</head>
+<body>
+<div id="base">
+	<div id="box1" class="box12"></div>
+	<div id="box2" class="box12" ></div>
+	<div id="box3"></div>
+</div>
+</body>
+</html>

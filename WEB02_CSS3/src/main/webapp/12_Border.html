@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- 
+* border(테두리)속성
+	- border-width 속성
+		. 테두리의 너비를 지정하는 스타일 속성
+		. 크기단위 : border-left[top/right/bottom]-width
+		. 키워드 : medium/thick/thin...
+	- border-style 속성
+		. 테두리의 형태를 지정하는 스타일 속성
+		. border-left[top/right/bottm]-style
+	- border-radius 속성
+		. CSS3에서 추가된 속성
+		. 테두리가 둥근 사각형 또는 원을 만들 수 있다
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>12_Border</title>
+<style type="text/css">
+	.box1{width:500px; height:80px; background:yellow;
+		border-left-width: thin;
+		border-right-width: 15px;
+		border-top-width: thick;
+		border-bottm-width: 20px;
+		/* 
+		border-width: thin;
+		border-width: medium;
+		border-width: thick; */
+		/* 
+		세로방향|가로방향
+		border-width: 2px 5px; */
+		/* 
+		위|가로방향|아래
+		border-width: 1px 5px 10px; */
+		/* 
+		두 개 이상으로 구성된 굵기와 나머지 옵션
+		border: solid red;
+		border-width : 2px 10px; */
+		
+		border-left-color : green;
+		border-right-color : red;
+		border-top-color : black;
+		border-bottom-color : #0000FF;
+		
+		border-left-style:solid;
+		border-right-style:double;
+		border-top-style:dotted;
+		border-bottom-style:dashed;
+		
+		text-align:center;
+	}
+	
+	.box2{width:400px; height:150px; border:5px solid blue;
+	border-radius:30px; /* 50px 100px 70px 30px; */}
+	
+	/* border-radius 값을 네 개로 넣었을 때 적용 순서
+		왼쪽 위->오른쪽 위->오른쪽 아래->왼쪽 아래 */
+		
+	/* border에 의한 선 굵기는 div 또는 박스모델의 전체 크기에 합산되어 관여합니다
+	따라서 box2는 양쪽 5px의 선굵기가 포함되어서 너비 410px, 높이 410px이 됩니다 */
+</style>
+</head>
+<body>
+<div class="box1"><h1>Lorem ipsum dolor amet</h1></div>
+<br/>
+<div class="box2"><h1>Lorem ipsum dolor amet</h1></div>
+</body>
+</html>

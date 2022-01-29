@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>11_CheckedEx</title>
+<style type="text/css">
+	#text{width:650px; height:300px; background:silver; overflow:hidden;
+	transition-duration:1s;}
+	#button{width:300px; height:20px; background:yellow;
+	border:1px solid black;}
+	
+	#button:active+#text{height:0px}
+	input[type=checkbox]:checked~#text{height:0px}
+</style>
+</head>
+<body>
+<input type="checkbox"/>체크하면 아래 텍스트가 사라집니다&nbsp;&nbsp;&nbsp;
+<div id="button">클릭하면 아래 텍스트가 사라집니다</div>
+<div id="text">
+	<h1>모든 국민은 직업선택</h1>
+	<p>사면·감형 및 복권에 관한 사항은 법률로 정한다. 모든 국민은 그 보호하는 자녀에게 적어도 
+	초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 재판의 심리와 판결은 공개한다. 다만, 
+	심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의
+	 결정으로 공개하지 아니할 수 있다.</p>
+</div>
+</body>
+</html>

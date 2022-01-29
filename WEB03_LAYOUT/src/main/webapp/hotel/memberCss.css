@@ -1,0 +1,33 @@
+
+/* login 시작 */
+.logtitle {width:865px; height:80px; position:relative; margin:0 auto; margin-bottom:0; 
+    border-bottom:3px solid #3a3125; color:#865009; font-size:170%; font-weight:bold; line-height:400%;}
+    
+.logview{width:600px; height:250px; position: relative; margin:100px auto; background:#F1EBD6;}
+    
+.logbox1{width:410px; height:60px; position: relative; margin-top:80px; margin-left:100px; margin-bottom:20px; float:left;}
+.loginput{width:290px; height:60px; position:relative; margin:0; float:left; color:#727272; }
+#logidPwd{width:280px; height:25px; float:left; margin-bottom:5px; position: relative; background:white; border:0; padding-left:10px;}
+#login{width:105px; height:60px; float:right; position:relative; background: wheat;  border:0px solid white; background:#3a3125; color:#F1EBD6; margin:0;}
+    
+.logbox2{width:410px; height:25px; position:relative; margin-left:105px; margin-bottom:0px;}
+.logbutton{width:190px; height:25px; margin-left:5px; margin-right:5px; float:left; position: relative; background:#9F876B; border:0; color:#F1EBD6;}
+/* login 끝 */
+
+/* content 시작 */
+.contTitle {width:865px; height:100px; position:relative; margin:0 auto; margin-bottom:0; color:#865009; font-size:170%; font-weight:bold; line-height:400%;}
+
+.contThreeStep{width:867px; height:50px; position: relative; margin:0 auto;}
+.contSelect{width:287px; height:45px; border:1px solid #F2EFEB; border-bottom:3px solid #a1886f; color:#3A3125; background:#FAF9F7; text-align:center; position:relative; float:left; line-height:360%; font-size:80%; margin:0;}
+.contNonselect{width:287px; height:45px; border:1px solid #F2EFEB; color:#DBD4CC; text-align:center; position:relative; float:left; line-height:360%; font-size:80%; margin:0; border-bottom:1px solid #a1886f;}
+
+form{width:865px; position:relative; margin:0px auto; margin-top:50px; font-size:80%; line-height:650%; font-weight: bold;}
+
+.contBox{width:865px; height:300px; border-bottom:1.5px dashed #F2EFEB;}
+.contAgree{width:865px; position:relative; margin:0px auto; font-size:80%; line-height:0%;}
+.contButtons{width:150px; height:40px; position:relative; margin:50px auto;}
+.contButton{width:70px; height:40px; position:relative; margin-right:2.5px; margin-left: 2.5px; float: left; background: #3a3125; color:white; border:0;}
+/* content 끝 */
+
+/* JoinInput 시작 */
+/* JoinInput 끝 */

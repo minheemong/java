@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>15_PseudoClass02</title>
+<style type="text/css">
+	li>a:first-child{color:red;}
+	/* 모든 li 안의 첫 번째 a 태그 - li 안에는 모두 a 태그 하나만 있으므로, 결국 모든 a 태그를 선택한 것과 같다*/
+	li:first-child>a {color:blue;}
+	/* li의 첫 번째 선택 후 그의 자식 태그 중 a 태그를 선택 */ 
+</style>
+</head>
+<body>
+<ul>
+	<li><a href="#">PseudoClass</a></li>
+	<li><a href="#">PseudoClass</a></li>
+	<li><a href="#">PseudoClass</a></li>
+	<li><a href="#">PseudoClass</a></li>
+	<li><a href="#">PseudoClass</a></li>
+	<li><a href="#">PseudoClass</a></li>
+	<li><a href="#">PseudoClass</a></li>
+	<li><a href="#">PseudoClass</a></li>
+</ul>
+</body>
+</html>

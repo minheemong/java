@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- *폰트 속성: 글자와 관련된 스타일 속성
+	1. font-size 속성
+		- 글자의 크기를 지정하는 스타일 속성. 참고) h1태그:32px, p태그:16px
+	2. font-family 속성
+		- 폰트를 지정하는 스타일 속성
+		- 일반적으로 한 단어로 이루어진 폰트는 따옴표를 사용하지 않음. 하지만 두 단어 이상으로
+			이루어진 단어는 따옴표를 반드시 적용.
+	3. font-style 속성
+		- 폰트의 기울기를 지정하는 스타일 속성 - 키워드 : italic 등
+	4. font-weight 속성
+		- 폰트의 두꼐를 지정하는 스타일 속성
+		- 키워드 : 700/800/900/bold...
+		- 일반 폰트 두께:400, 두꺼운 폰트 두께:700
+		- 두께를 지원하지 않는 폰트는 font-weight 속성을 사용해 두께를 조절할 수 없다
+	5. line-height 속성
+		- 글자의 높이를 지정, 글자를 수직 중앙 정렬할 때 사용
+	6. text-align 속성 : 글자의 정렬과 관련된 스타일 속성 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>19_Font</title>
+<!-- 웹폰트 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&
+display=swap" rel="stylesheet">
+
+<style type="text/css">
+	.font_arial{font-family:Arial, sans-serif;}
+	.font_roman{font-family:'Times New Roman',serif;}
+	.font_gulim{font-family:굴림;}
+	.font_big{font-size:200%;}
+	.font_italic{font-style:italic;}
+	.font_bold{font-weight:bold;}
+	.font_nanum{font-family: 'Nanum Myeongjo', serif;}
+</style>
+</head>
+<body>
+<h1 class="font_arial">Lorem ipsum</h1>
+<h1 class="font_roman">Lorem ipsum</h1>
+<h1 class="font_gulim">Lorem ipsum</h1>
+<p class="font_italic font_big font_bold">Lorem ipsum dolor amet</p>
+<p class="font_nanum font_big font_bold">Lorem ipsum dolor amet</p>
+</body>
+</html>
