@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입양식</title>
+</head>
+<body>
+<form action="">
+<table border="0" align="center" cellspacing="1" width="80%" height="30" 
+cellpadding="5" bgcolor="black">
+	<tr bgcolor="white">
+		<td align="right" width="200">아이디</td> 
+		<!--가운데 정렬 굵게(제목용) <th></th>-->
+		<td><input type="text" name="id" size="40"/></td>
+	</tr>
+	<tr bgcolor="white">
+		<td align="right">패쓰워드</td>
+		<td><input type="password" name="pw" size="40"/> </td>
+	</tr>
+	<tr bgcolor="white">
+		<td align="right">전화번호</td>
+		<td>
+			<select>	
+				<option value="1">선택</option>
+				<option value="2">010</option>
+				<option value="3">032</option>
+				<option value="5">031</option>
+				<option value="4">02</option>
+			</select><!--  띄어쓰기 &nbsp; -->
+			&nbsp;-&nbsp;<input type="text" name="bun1" size="15"/>
+			&nbsp;-&nbsp;<input type="text" name="bun2" size="15"/>
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td align="right">성별</td>
+		<td>
+			<input type="radio" value="m" name="gender">남자
+			<input type="radio" value="f" name="gender">여자
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td align="right">알게된 경로</td>
+		<td>
+			<input type="checkbox" value="news" name="ch"/>신문
+			<input type="checkbox" value="tv" name="ch"/>TV
+			<input type="checkbox" value="intro" name="ch"/>지인소개
+			<input type="checkbox" value="other" name="ch"/>기타
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td align="right">직업</td>
+		<td>
+			<select>
+				<option value="1">학생</option>
+				<option value="2">회사원</option>
+				<option value="3">자영업</option>
+				<option value="4">무직</option>
+			</select>
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td align="right">생년월일</td>
+		<td>
+			<input type="text" name="year" size="15">년
+			<select>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>월
+			<select>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+				<option>13</option>
+				<option>14</option>
+				<option>15</option>
+				<option>16</option>
+				<option>17</option>
+				<option>18</option>
+				<option>19</option>
+				<option>20</option>
+				<option>21</option>
+				<option>22</option>
+				<option>23</option>
+				<option>24</option>
+				<option>25</option>
+				<option>26</option>
+				<option>27</option>
+				<option>28</option>
+				<option>29</option>
+				<option>30</option>
+				<option>31</option>
+			</select>일
+		</td>
+	</tr>
+	<tr bgcolor="white">
+		<td align="right">주소</td>
+		<td><input type="text" name="address" size="70"/></td>
+	</tr>
+	<tr bgcolor="white">
+		<td colspan=2 align="center">
+		<input type="submit" value="작성완료"/>
+		<input type="reset" value="취소"/>
+		</td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>
