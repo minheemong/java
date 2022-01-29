@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_BOM02.html</title>
+    <script type="text/javaScript">
+        //2. screen 객체 
+        //- 웹브라우저의 화면이 아니라 운영체제 화면의 속성을 가지는 객체.
+        var output = '';
+        for(var key in screen){
+            output += '<h3>※ ' + key + ' : ' + screen[key] + '</h3>';
+        }
+        document.write(output);
+
+        // 팝업창을 띠우고 팝업창의 크기를 화면의 크기와 일치시팁니다
+        var child = window.open('', '', 'width=300, height=200');
+        // 팝업창의 위치를 왼쪽 최상단체 맞춰 이동합니다
+        child.moveTo(0, 0);
+        var width = screen.width;
+        var height = screen.height;
+        child.resizeTo(width, height);
+        
+        // setInterval 을 사용하여, 좌우 상하 크기를 일정크기로 반복 줄이고, 오른쪽 아래로 일정 위치로 이동합니다
+        setInterval( function(){ 
+            child.resizeBy(-20, -20);
+            child.moveBy(20, 20);
+        }, 1000);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

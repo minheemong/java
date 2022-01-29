@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_BOM01.html</title>
+    <script type="text/javaScript">
+        // * 브라우저 객체 모델(BOM:Browser Object Model) : 자바스크립트에서는 윈도우나 웹 브라우져등을 객체로 정의해서 그 안에 여러 구성요소들을 멤버변수나 멤버 메서드로 접근하고 조정할 수 있게 합니다. 
+
+        //  - 자바스크립트에 준비(내장)되어 있는 웹브라우저와 관련된 객체의 집합을 의미.
+        //  - 브라우저의 활용 객체들 : window, screen, location, navigator, history, document 등
+
+        /* 1. window 객체 */
+        // - 브라우저 기반 자바스크립트의 최상위 객체.
+        // - alert(), prompt() 함수 모두 window 객체의 메서드.
+        // - 원래의 사용은 windos.alert()   window.prompt() 라고 써야하지만 편의상 window. 을 생략하고 사용합니다
+
+        // window 객체의  팝업 윈도우 생성 메서드.
+        // 명령형식 : window.open( 팝업창에 표시될 페이지 또는 주소, 팝업창 이름, 옵션)
+
+        // 팝업창에 표시될 페이지이름(경로포함) 또는 사이트의 주소 : 
+        //       '04_Loop.html'  , 'https://www.naver.com' 
+        // 팝업창의 이름 : 스크립트내부에서 팝업창끼리 구분할 이름 - 'child' 같은 별칭
+        // 옵션 : 'width=600, height=480' 과 같은 팝업창의 속성들. 가로세로 크기 등
+        //    " " 또는  ' ' 안에 여러 요소를 (,)컴마로 구분하여 설정하고자 하는 요소를 모두 넣습니다.
+        // width : 팝업창 가로길이         // height : 팝업창 세로길이
+        // toolbar=no : 단축도구창(툴바) 표시안함 // menubar=no : 메뉴창(메뉴바) 표시안함
+        // location=no : 주소창 표시안함  // scrollbars=no : 스크롤바 표시안함
+        // status=no : 아래 상태바창 표시안함  // resizable=no : 창변형 하지않음
+        // fullscreen=no : 전체화면 하지않음   // channelmode=yes : F11 키 기능이랑 같음
+        // left=0 : 왼쪽에 창을 고정(ex. left=30 이런식으로 조절)
+        // top=0 : 위쪽에 창을 고정(ex. top=100 이런식으로 조절)
+        var child = window.open('', 'child1', 'width=600, height=480');
+        // 열린 팝업창을 제어할 레퍼런스 변수를 만들고 팝업창의 제어권(주소)을 저장합니다
+
+        // window.setInterval() : 일정 시간 간격으로 지정한 동작 또는 함수를 호출 실행합니다
+        // wimdow.setInterval( 동작을 담고 있는 익명함수 또는 선언적함수 이름  , 시간간격 )
+        // 시간간격 : 1000 -> 1초
+
+        // window.setInterval( function(){ child.movyBy(50, 50)  }  , 500 );
+        //window.setInterval( function(){  
+        //    child.moveBy(50, 50);
+        //}  ,1000 );
+
+
+        function abc(){
+            child.moveBy(50, 50);
+        }
+        // 선언적 함수를 만들어서  setInterval 안에 익명함수 대신 이름을 넣기도 합니다 
+        // window.setInterval( abc()  , 1000 );
+
+
+        var output = '';
+        for(var key in window){
+            output += '<h2>※ ' + key + ' : ' + window[key] + '</h2>';
+        }
+        document.write( output );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

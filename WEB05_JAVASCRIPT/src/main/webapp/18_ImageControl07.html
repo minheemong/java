@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_ImageControl07.html</title>
+    <style type="text/css">
+    #base{position: relative; width: 170px; height:255px; border:1px solid black; overflow:hidden; left:100px;}
+    #view{position:absolute; width:850px; height: 255px; left:0; top:0; border:1px dashed red; transition: 1s;}
+    </style>
+    <script type="text/javaScript">
+    num=0;
+    setInterval(function move() {
+        num++;
+        var dist = -1*num*170;
+        document.getElementById("view").style.left = dist + "px";
+        if(num==4) num=-1;
+    },1000);
+    //setInterval에 넣어서 1초에 한번씩 움직이게 해주세요
+    //익명함수를 또 만들거나 move()함수를 setInterval에 넣는다
+    //setInterval("move()",1000);
+    </script>
+</head>
+<body>
+    <div id="base">
+        <div id="view" onClick="move()">
+            <img src="images/1.jpg"><img src="images/2.jpg"><img src="images/3.jpg"><img src="images/4.jpg"><img src="images/5.jpg">
+        </div>
+    </div>
+</body>
+</html>

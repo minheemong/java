@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_Control_IF.html</title>
+    <script type="text/javaScript">
+    /* 1. if 조건문
+    var date = new Date();
+    //자바 스크립트의 내장 라이브러리 중 날짜객체를 생성하는 명령. 자바스크립트에도 자바와 같이 활용할 주요 내장 클래스들이 존재합니다. 새로운 객체를 생성하기 위해 new는 명령과 함께 객체를 생성하여 사용합니다.
+
+    // 자바스크립트의 if문의 사용은 자바에서의 사용과 똑같습니다
+    var hour = date.getHours();
+    if(hour < 11){
+        alert(hour+'시 : 아침 먹을 시간입니다.');
+    }else if(hour < 15){
+        alert(hour+'시 : 점심 먹을 시간입니다.');
+    }else{
+        alert(hour+'시 : 저녁 먹을 시간입니다.');}
+
+    var min = date.getMinutes();
+    alert(min);
+    var sec = date.getSeconds();
+    alert(sec);
+    //var year = date.getYear();
+    // getYear() 함수는 원래 연도에서 1990년을 뺀 값을 리턴함
+    // gerYear() 함수는 웹 표준에서 제거(Deprecated) 되었음
+    // getFullYear() 로 대체 되어 사용중
+    var year = date.getFullYear();
+    alert(year);
+    var month = date.getMonth();
+    alert((month + 1) + '월');
+    var date1 = date.getDate();
+    alert(date1 + '일');
+    var week = date.getDay();
+    //0:일요일 1:월요일 2:화요일... 6:토요일
+    if(week==1) alert('월요일');
+    else if(week==2) alert('화요일');
+    else if(week==3) alert('수요일');
+    else if(week==4) alert('목요일');
+    else if(week==5) alert('금요일');
+    else if(week==6) alert('토요일');
+    else alert('일요일');*/
+
+    /* 2.switch
+    var input = Number( prompt('숫자를 입력하세요.','숫자'));
+    switch (input % 2) {
+        case 0:
+            alert("짝수입니다.");
+            break;
+        case 1:
+            alert("홀수입니다.");
+            break;
+        default: //if문의 else와 같은 역할의 명령입니다
+            alert("숫자가 아닙니다.");
+            break;
+    }*/
+
+    /* 월과 일을 입력받아 요일을 출력하는 코드를 작성하세요
+    요일은 2021년에 한해서만 계산하되, 2021년 1월 1일은 금요일인것을 기준으로 코드를 작성합니다. if또는 switch를 사용하세요
+    입력을 받기위한 prompt명령의 디폴트값(처음에 미리 입력된 값)은 오늘 날짜의 월과 일을 표시해주세요 */
+    var date=new Date();
+    var tm = date.getMonth()+1;
+    var td = date.getDate();
+    //월 입력
+    var m = Number(prompt('월 입력', String(tm)));
+    //일 입력
+    var d = Number(prompt('일 입력', String(td)));
+    //입력된 월의 전달까지 날짜 합산
+    var days = 0;
+    switch (m) {
+        case 12:days=days+30;
+        case 11:days=days+31;
+        case 10:days=days+30;
+        case 9:days=days+31;
+        case 8:days=days+31;
+        case 7:days=days+30;
+        case 6:days=days+31;
+        case 5:days=days+30;
+        case 4:days=days+31;
+        case 3:days=days+28;
+        case 2:days=days+31;
+        default: alert('입력값이 잘못되었습니다');
+    }
+    //입력된 일을 날짜에 합산
+    //총 날짜수를 7로 나눈 나머지 계산
+    //나머지에 따라 요일 출력 나머지가 1이면 금요일
+    if(days%7==1){alert('금요일 입니다')
+    }else if(days%7==2){alert("토요일 입니다")
+    }else if(days%7==3){alert("일요일 입니다")
+    }else if(days%7==4){alert("월요일 입니다")
+    }else if(days%7==5){alert("화요일 입니다")
+    }else if(days%7==6){alert("수요일 입니다")
+    }else{alert("토요일 입니다")}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

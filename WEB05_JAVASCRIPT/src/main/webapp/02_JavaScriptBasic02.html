@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_JavaScriptBasic02.html</title>
+    <script = type"text/javaScript>
+    /* 13.배열
+    배열에 저장되는 자료형이 고정되지 않았습니다. 또한 배열 안에 배열을 넣어서 이차원 배열처럼 사용이 가능합니다.
+    var array=[273, 'string', true, function(){}, {}, [150,170] ];
+    alert(array[0]);
+    alert(array[1]);
+    alert(array[2]);
+    alert(array[3]);
+    alert(array[4]);
+    alert(array[5][0]);
+    alert(array[5][1]);
+    alert(array); */
+
+
+
+    /* 14.undefined 자료형
+    1. 존재하지 않는 것을 표현하는 자료형
+    alert(typeof(variable));
+    
+    //2. 변수를 선언했지만, 초기화하지 않았을 때
+    var variable2;
+    alert(typeof(variable2)); */
+
+
+
+    /* 15.숫자와 문자열 자료형 변환 
+    1. +연산자
+    alert(52+273);//325
+    alert('52'+'273'); //52273
+    alert('52'+273); //52273
+    alert(52+'273'); //52273
+
+    //2.덧셈을 제외한 사칙 연산 : 문자가 숫자로 변환되어 산술연산 실행
+    alert('52'*2); //104
+    alert('52'-2); //50
+    alert('52'/2); //26
+    alert('52'%2); //1
+    alert('홍길동'-2) //NaN 한글, 알파벳과 숫자의 - 연산은 불가
+    */
+
+
+
+    /* 
+    3.강제 자료형 변환
+    -다른 자료형 -> 숫자변환:Number() 함수 사용
+    -다른 자료형 -> 문자열 변환:String() 함수 사용 
+    var input = prompt('숫자를 입력하세요','숫자');
+    var num = Number(input);
+    alert(typeof(input)+' : '+num+" : typeof(num) => "+typeof(num));
+    //숫자가 아닌 값 입력 시
+    //- NaN 출력 : 자바 스크립트로 나타낼 수 없는 숫자 의미
+
+    //4.Boolean() 자료형 변환
+    alert('Boolean(0) -> ' + Boolean(0)); //false
+    alert('Boolean(NaN) -> ' + Boolean(NaN)); //false
+    alert('Boolean(\'\') -> ' + Boolean('')); //false
+    alert('Boolean(null) -> ' + Boolean(null)); //false
+    alert('Boolean(undefined) -> ' + Boolean(undefined)); //false
+    //단, 주의 사항
+    alert('Boolean(\'0\') -> ' + Boolean('0')); //true
+    alert('Boolean(\'false\') -> ' + Boolean('')); //true*/
+
+
+
+    /* 16.일치 연산자
+    양변의 자료형은 틀리지만 자료형을 맞춰서 변환했을 때 변환된 값이 같음 */
+    alert('\'\'== false -> ' + (''==false)); //true
+    alert('\'\'== 0 -> ' + (''==0)); //true
+    alert('0 == false -> ' + (0==false)); //true
+    alert('273 == \'273\' -> ' + (273=='273')); //true
+
+    // === : 양변의 자료형과 값이 모두 일치
+    // !== : 양변의 자료형과 값이 다름
+    alert('\'\'=== false -> ' + (''===false)); //false
+    alert('\'\'=== 0 -> ' + (''===0)); //false
+    alert('0 === false -> ' + (0===false)); //false
+    alert('273 === \'273\' -> ' + (273==='273')); //false
+    var str="홍길동";
+    alert('"홍길동" === "홍길동" -> ' + (str==="홍길동")); //true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>QW

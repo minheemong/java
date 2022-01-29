@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_ImageControll12.html</title>
+    <style type="text/css">
+        #base{ position:relative; width:600px; height:400px; margin:0 auto; border:1px dashed black; overflow: hidden; }
+        #view{ position:absolute; width:4800px; height:400px; left:0; top:0; border:1px dashed red; transition: 0.3s; }
+        img{ width:600px; height:400px; }
+        #lbtn{position:absolute; left:0; bottom:0; width:50px; height:50px; border-radius:50%; overflow: hidden; background-image:url(images/ico_movie_171115.png); background-position:-60px -460px;}
+        #rbtn{position:absolute; right:0; bottom:0; width:50px; height:50px; border-radius: 50%; overflow: hidden; background-image:url(images/ico_movie_171115.png); background-position:  0px -460px;}
+    </style>
+    <script type="text/javascript"> 
+        var num = 0;
+        function move(x){
+            if(num == 0 && x == -1 ) return;
+            if(num == 7 && x == 1 ) return;
+            num = num + x;
+            var dist = -600 * num;
+            document.getElementById("view").style.left = dist + "px"; 
+        }
+    </script>
+</head>
+<body>
+    <div id="base">
+        <div id="view"><img src="images/Koala.jpg"><img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Jellyfish.jpg"><img src="images/Lighthouse.jpg"><img src="images/Penguins.jpg"><img src="images/Tulips.jpg"></div>
+        <div id="lbtn" onClick="move(-1)"></div>
+        <div id="rbtn" onClick="move(1)"></div>
+    </div>
+</body>
+</html>

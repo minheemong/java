@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_ImageControl03.html</title>
+    <script type="text/javaScript">
+    //마우스로 이미지를 클릭할때마다 이미지 이름이 1->2 2->3 3->4 식으로 변경되도록 코딩합니다. 이미지 10은 다시 1로 돌아옵니다
+    var number=2; 
+    // 이미지가 1~10까지 증가하고 다시 1로 되돌아가려면 변수값의 변화값이 유지되어야하므로 함수 밖에 변수를 선언합니다. 지역변수는 함수를 벗어나는 순간 소멸됩니다
+    function changeImg() {
+        document.getElementById("target").src="images/"+number+".jpg";
+        number++;
+        if(number>10)number=1;
+    }
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg" id="target" onclick="changeImg()">
+</body>
+</html>

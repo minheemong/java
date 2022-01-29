@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_Function02</title>
+<script type="text/javaScript">
+	
+function add(a, b){
+	c = a+b;
+	document.write(a + "+" + b + "=" + c + "<br>");
+	return c;
+}
+//1. 자바스크립트 함수의 전달인수와 매개변수는 자바와 비슷하지만 매개변수의 자료형을 표시하지 않고 
+//   변수의 이름만 명시하고 사용합니다.  리턴값의 사용은 자바와 똑같습니다
+var result = add(10,20);
+
+//2. 매개변수의 사용
+//생성되어 있는 매개 변수보다 전달인수의 갯수가 많으면 해당 전달인수는 무시됩니다
+function f(x){ 
+	document.write(x + "*" + x + "=" + (x*x)  + "<br>");
+	return x*x; 
+}
+result = f(5, 3); //    - 두번째 전달인수는 무시한다.
+
+
+// 3. 함수의 오버로딩 사용예
+//배열을 만들어주는 Array() 함수의 다양한 사용(오버로딩)
+//- Array() 함수는 기본적으로 매개변수에 아무것도 입력하지 않게 정의됨.
+var array1 = Array(); // 빈 배열을 만듦.
+var array2 = Array(10); // 매개변수만큼의 크기를 가지는 배열을 만듦.
+var array3 = Array(25, 35, 45, 55); // 매개변수를 배열로 만듦.
+document.write("<h1>" + array1 + "<br>" + array2 + "<br>" + array3 + "</h1>");
+
+
+S
+// 4. arguments 변수 사용 예제
+function sumAll( ){
+	document.write("<h1>" + typeof(arguments) + ' : ' +arguments.length + "</h1>");
+	var s = "";
+	for(var i in arguments){
+        s = s + arguments[i] + " ";
+    }
+	document.write("<h1>" + s + "</h1>");
+}
+//arguments : 전달된 인수들을 arguments  라는 매개 변수로 받아서 객체 또는 배열 처럼 사용할 수 있게 합니다
+sumAll(1, 2, 3, 4, 5);
+sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+
+// 입력 매개변수를 모두 더해 리턴 또는 출력하는 함수 
+function addAll(){
+	var result=0;
+	for(var i in arguments){
+		result += arguments[i];
+	}
+	document.write("<h1>" + arguments + "의 합계 : " + result + "</h1>");
+	return result;
+}
+result = addAll(1,2,3,4,5,6,7,8,9,10);
+
+
+
+
+
+// 5. 리턴값이 익명함수인경우
+function returnFunc(){
+	return function(){ document.write("<h1>리턴된 함수의 출력</h1>"); };
+}
+//returnTest()함수 호출 후 리턴받은 익명함수를  value  변수에 저장
+var value = returnFunc();
+// 위아래의 동작은 같은 동작입니다
+var value1 = function(){ 
+	document.write("<h1>리턴된 함수의 출력</h1>"); 
+}
+value();
+value1();
+returnFunc()();  //함수를 호출하고 리턴된 함수가 실행될수 있게 괄호하나를 추가합니다
+
+
+
+
+
+// 6. 익명함수를 함수의 전달인수로 전달하는 경우
+function varFunction( otherFunction ){
+	// 매개변수에 익명함수가 전달되었다라는 말은 그 변수에 괄호를 붙여서 함수를 호출 또는 실행할 수 있다는 말입니다
+	for(var i=0; i<5; i++)
+		otherFunction();
+}
+var func = function(){ document.write('<h1>Hello JavaScript...!</h1>'); }
+varFunction(func);
+// 익명함수의 매개변수 전달 또는 리턴은 함수의 몸체가 직접 전달 또는  return  되는 것이 특징입니다. 
+// 더러는 변수에 저장후 변수를 전달인수 또는 return  값으로 하는 경우도 있지만 변수 사용을 하나라도 줄이고자 하는 
+// 의도에서 함수의 내용이 너무 길거나 많지 않다면 직접 해당 자리에 익명함수를 기술해주는게 보통입니다 
+varFunction(  function(){ document.write('<h1>Hello JavaScript...!</h1>'); }  );
+
+
+
+// 7.  선언적 함수를 매개변수로 전달
+function justFunction(){
+	document.write('<h1>Hello JavaScript...#2 </h1>');
+}
+varFunction( justFunction );
+
+
+
+
+
+//8. 지역 변수와 유효범위 
+function test(name){
+    var output = 'Hello ' + name + '..!';
+    return output;
+}
+
+//output 변수는 지역 변수이므로, 함수를 벋어나면 없는 변수가 됩니다.
+//document.write('<h1>' + output + '</h1>');
+// 실행결과 에러 메세지 : output is not defined
+// 지역변수는 자신을 감싸고 있는 중괄호를 벋어나는 순간 소멸됩니다.
+
+// 지역변수가 소멸되기 전에 그 값 리턴으로 전달받아 사용하면, 지역변수값을 살려서 활용이 가능합니다
+var s = test('홍길동');
+document.write('<h1>' + s + '</h1>');
+
+
+
+
+// 9. 클로져(Closure):지역변수의 값을 살리고 활용하기 위해   리턴되는 함수의 리턴값으로 활용. 
+// 리턴값 외에 함수실행후 없어지는 지역 변수 값을 활용하기 위한 방법
+function test2(name){
+    var output = 'Hello '+name+'..!';
+    return function(){ return output; } ; // 익명함수가 리턴됩니다.
+}	
+
+var func1 = test2('이순신');
+var s = func1();
+document.write('<h1>' + s + '</h1>');
+document.write('<h1>' + func1() + '</h1>');
+document.write('<h1>' + test2('이순신')() + '</h1>');
+
+</script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>

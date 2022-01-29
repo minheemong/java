@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_ImageControl06.html</title>
+    <style type="text/css">
+        #a1{position: absolute; width: 170px; height:255px; border:2px solid black; top:100px; left:100px;}
+    </style>
+    <script type="text/javaScript">
+        
+        /* function rotate() {
+            aa += 20;
+            document.getElementById("a1").style.webkitTransform='rotate('+aa+'deg)';
+        } */
+        //setInterval을 이용해 1초에 20도씩 회전. 마우스를 올리면 반대방향으로 회전, 마우스가 빠져나가면 원래 방향으로 회전
+        var aa=0;
+        var timer1; vartimer2;
+        function clock(){
+            window.clearInterval(timer2);
+            timer1 = window.setInterval(function() {
+                aa+=20;
+                document.getElementById("a1").style.webkitTransform='rotate('+aa+'deg)';
+                if(aa==360) aa=0;
+            },500);
+        }
+        function counterclock(){
+            window.clearInterval(timer1);
+            timer2 = window.setInterval(function() {
+                aa-=20;
+                document.getElementById("a1").style.webkitTransform='rotate('+aa+'deg)';
+                if(aa==360) aa=0;
+            },500);
+        }
+    </script>
+</head>
+<body>
+    <div id='a1' onclick="rotate()" onmouseover="clock()" onmouseout="counterclock()">
+        <img src="images/1.jpg" id="target">
+    </div>
+</body>
+</html>

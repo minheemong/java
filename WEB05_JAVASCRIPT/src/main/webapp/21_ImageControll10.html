@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21_ImageControll10.html</title>
+    <style type="text/css">
+        #base{position:relative; width:170px; height:255px; border:1px solid blue; overflow:hidden;}
+        .imgs{position:absolute; top:0; left:0; opacity:0; transition:3s;}
+        #view1{opacity:1;}
+    </style>
+    <script>
+        //  setInterval 을 이용해서 3초마다  순서데로 그림의  opacity  를 1로, 나머지를 0으로 변환해주세요
+        var num=0;
+        setInterval( function(){
+            for(var i=1; i<=5; i++)
+                document.getElementById("view" + i).style.opacity = '0';
+            num++;
+            document.getElementById("view" + num).style.opacity = '1';
+            if(num==5)num=0;
+        } , 3000);
+    </script>
+</head>
+<body>
+    <div id="base">
+        <div class="imgs" id="view1"><img src="images/1.jpg"></div>
+        <div class="imgs" id="view2"><img src="images/2.jpg"></div>
+        <div class="imgs" id="view3"><img src="images/3.jpg"></div>
+        <div class="imgs" id="view4"><img src="images/4.jpg"></div>
+        <div class="imgs" id="view5"><img src="images/5.jpg"></div>
+    </div>     
+</body>
+</html>
